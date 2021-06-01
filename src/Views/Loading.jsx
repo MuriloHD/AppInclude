@@ -1,12 +1,12 @@
 import React from 'react';
-import { View ,Image , StyleSheet} from 'react-native';
+import { View ,Image , StyleSheet, StatusBar} from 'react-native';
 import Logo from '../assets/LOGOS/logo-completa.png'
 // import { Container } from './styles';
 
 const Views = () => {
   return( 
     <View style = {styles.container}>
-        
+        <StatusBar></StatusBar>
         <Image style = {styles.imagem} source = {Logo} ></Image>
         
     </View>
