@@ -7,7 +7,7 @@ import Logo from '../assets/LOGOS/logo-completa.png'
 
 
 
-const Views = () => {
+const Views = ({navigation}) => {
     const [usuario,setUsuario] = useState('')
     const [senha,setSenha] = useState('')
 
@@ -33,10 +33,10 @@ const Views = () => {
         ></TextInput>
 
         <View style ={styles.buttonsView}>
-                <TouchableOpacity style ={[styles.button,{paddingVertical:10,paddingHorizontal:20}]}>
+                <TouchableOpacity onPress = {()=> navigation.navigate('Cadastro')} style ={[styles.button,{paddingVertical:10,paddingHorizontal:20}]}>
                     <Text style = {styles.textButton}>CADASTRO</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style ={[styles.button,{marginLeft:90,paddingVertical:10,paddingHorizontal:30}]}>
+                <TouchableOpacity onPress = {() => navigation.navigate('Home')} style ={[styles.button,{marginLeft:90,paddingVertical:10,paddingHorizontal:30}]}>
                     <Text style = {styles.textButton}>ENTRAR</Text>
                 </TouchableOpacity>
 
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     },
     button:{
         justifyContent:'flex-start',
-        backgroundColor:'#191970',
+        backgroundColor:'#003057',
         
         borderRadius:10,
         elevation:10
