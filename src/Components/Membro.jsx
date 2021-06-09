@@ -1,10 +1,11 @@
 import React from 'react';
-import { Text, View,StyleSheet } from 'react-native';
-
+import { Text, View,StyleSheet,TouchableOpacity } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 // import { Container } from './styles';
 
 const Components = (props) => {
-    return <View style ={styles.background}>
+    return <TouchableOpacity style ={styles.background} onPress = {()=>props.navigation.navigate('Profile membro')}>
         <Text style = {styles.textId}>{props.id}º</Text> 
         <Text style = {styles.avatar}>Avatar</Text>
         <View style = {styles.viewInfo}>
@@ -13,7 +14,7 @@ const Components = (props) => {
         </View>
         
         
-    </View>
+    </TouchableOpacity>
 }
 
 export default Components;
