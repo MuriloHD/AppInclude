@@ -7,7 +7,7 @@ import Selo2 from '../assets/SELO2.png'
 import Tarefas from '../Components/Tarefas'
 // import { Container } from './styles';
 
-const Views = () => {
+const Views = (props) => {
     return <View style = {styles.background}>
         <View style = {styles.viewPerfil}>
             <Image source = {ImagemFoto} style={styles.avatar}></Image>
@@ -26,7 +26,10 @@ const Views = () => {
         </View>
         <View style = {styles.viewTarefas}>
             <Text style = {{fontSize:25,marginBottom:25, color:'#003057'}}>Tarefas</Text>
-            <Tarefas></Tarefas>
+            <TouchableOpacity onPress = {()=>props.navigation.navigate("Visualizar Tarefas")}>
+                <Tarefas></Tarefas>
+            </TouchableOpacity>
+            
         </View>
     </View>;
 }

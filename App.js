@@ -10,7 +10,7 @@ import Home from './src/Views/Home'
 import PerfilMenbro from './src/Views/PerfilMenbro.jsx'
 import { color } from 'react-native-reanimated';
 import imageHome from './src/assets/home.png'
-
+import VisualizarTarefas from './src/Views/VisualisarTarefas'
 export default function App() {
   const Stack = createStackNavigator();
   return (
@@ -83,11 +83,29 @@ export default function App() {
             )
           })
         }}></Stack.Screen>
+        <Stack.Screen 
+        name = "Visualizar Tarefas" 
+        component = {VisualizarTarefas}
+        options= {({navigation})=>{
+          return({
+            headerTitle:'INCLUDE',
+            headerStyle:{backgroundColor:'#003057', },
+            headerTitleAlign:'center',
+            headerTitleStyle:{color:'#FFF',fontSize:16},
+            headerRight:() => (
+              <Text style = { {color:"#FFF",paddingRight:12,paddingBottom:1}}>MEMBRO/ADMIN</Text>
+            ),
+            headerLeft:()=>(
+              <HeaderBackButton tintColor={'white'} onPress = {()=> navigation.goBack()} />
+            )
+          })
+        }}
+        ></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
-     
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
