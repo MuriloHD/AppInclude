@@ -11,6 +11,7 @@ import PerfilMenbro from './src/Views/PerfilMenbro.jsx'
 import { color } from 'react-native-reanimated';
 import imageHome from './src/assets/home.png'
 import VisualizarTarefas from './src/Views/VisualisarTarefas'
+import AdicionarTarefa from './src/Views/AdicionarTarefa.jsx'
 export default function App() {
   const Stack = createStackNavigator();
   return (
@@ -100,6 +101,10 @@ export default function App() {
             )
           })
         }}
+        ></Stack.Screen>
+        <Stack.Screen 
+        name = "Adicionar tarefa"
+        component = {AdicionarTarefa}
         ></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
