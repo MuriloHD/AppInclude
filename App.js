@@ -12,6 +12,9 @@ import { color } from 'react-native-reanimated';
 import imageHome from './src/assets/home.png'
 import VisualizarTarefas from './src/Views/VisualisarTarefas'
 import AdicionarTarefa from './src/Views/AdicionarTarefa.jsx'
+import SaveImg from './src/assets/Save.png'
+
+
 export default function App() {
   const Stack = createStackNavigator();
   return (
@@ -105,6 +108,22 @@ export default function App() {
         <Stack.Screen 
         name = "Adicionar tarefa"
         component = {AdicionarTarefa}
+        options = {({navigation})=>{
+          return({
+            headerTitle:'INCLUDE',
+            headerStyle:{backgroundColor:'#003057', },
+            headerTitleAlign:'center',
+            headerTitleStyle:{color:'#FFF',fontSize:16},
+            headerRight:() => (
+              <TouchableOpacity>
+                <Image source ={SaveImg} style = {{transform:[{scale:0.6}]}}></Image>
+              </TouchableOpacity>
+            ),
+            headerLeft:()=>(
+              <HeaderBackButton tintColor={'white'} onPress = {()=> navigation.goBack()} />
+            )
+          })
+        }}
         ></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>

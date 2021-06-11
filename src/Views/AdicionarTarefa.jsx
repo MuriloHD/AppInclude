@@ -1,10 +1,12 @@
 import { Picker } from '@react-native-picker/picker';
 import React from 'react';
 import { Text, TextInput, View,StyleSheet} from 'react-native';
+import { useState } from 'react/cjs/react.development';
 
 // import { Container } from './styles';
 
 const Views = () => {
+    const [categoria,setCategoria] = useState('PONTUALIDADE')
     return(
         <View style = {styles.background}>
             <View style = {styles.viewTitulo}>
@@ -26,7 +28,7 @@ const Views = () => {
             
             <View style = {styles.viewTitulo}>
                 <Text style = {styles.titulo}>Pontuação</Text>
-                <Picker style = {styles.picker}>
+                <Picker mode = "dropdown" style = {styles.picker} selectedValue = {categoria} onValueChange = {setCategoria}>
                     <Picker.Item label = "PONTUALIDADE" value = 'PONTUALIDADE'></Picker.Item>
                     <Picker.Item label = "ASSIDUIDADE" value = 'Assiaduidade'></Picker.Item>
                     <Picker.Item label = "DENTRO DO PRAZO" value = 'DENTRO DO PRAZO'></Picker.Item>
@@ -34,7 +36,7 @@ const Views = () => {
                 </Picker>
             </View>
 
-            <View>
+            <View style ={styles.viewTitulo}>
                 <Text style = {styles.titulo}>SELOS(s)</Text>
             </View>
         </View>
