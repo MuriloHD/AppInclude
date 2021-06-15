@@ -126,6 +126,8 @@ export default function App() {
         }}
         ></Stack.Screen>
       </Stack.Navigator>
+
+      <view>{/* TESTE */}</view>
     </NavigationContainer>
   );
 }
